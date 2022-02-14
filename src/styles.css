@@ -1,6 +1,6 @@
 body {
   font-family: "Aktiv Grotesk", -apple-system, BlinkMacSystemFont, 'San Frasisco', 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
-  background: url(https://www.tomorrow.io/weather/blog/wp-content/uploads/2021/07/Clouds-1024x682.jpeg) no-repeat;
+  background: url("https://www.tomorrow.io/weather/blog/wp-content/uploads/2021/07/Clouds-1024x682.jpeg") no-repeat;
 }
 
 .container {
@@ -106,9 +106,9 @@ body {
 }
 
 .developer {
-  color:  ##C8CCD3;
+  color:  #C8CCD3;
 }
 
 .developer a {
-  color:  ##C8CCD3;
+  color:  #C8CCD3;
 }
