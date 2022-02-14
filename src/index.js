@@ -116,7 +116,7 @@ function displayForcast(response) {
 }
 function getCurrentLocation(event) {
   event.preventDefault();
-  navigator.geolocation.getCurrentPosition(searchLocation);
+  navigator.geolocation.getCurrentPosition(currentCity);
 }
 
 farenheitLink.addEventListener("click", dispayFarenheitTemperature);
