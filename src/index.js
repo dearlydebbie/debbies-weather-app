@@ -115,7 +115,13 @@ function displayForcast(response) {
   });
   forcastElement.innerHTML = forcastHTML;
 }
-
+function getCurrentLocation(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(searchLocation);
+}
+var currentLocationButton = document.querySelector("#current-location-button");
+currentLocationButton.addEventListener("click", getCurrentLocation);
+searchCity("Lagos");
 
 farenheitLink.addEventListener("click", dispayFarenheitTemperature);
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
