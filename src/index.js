@@ -1,3 +1,24 @@
+let apiKey = "b6352b3dca0e8a98600ef53301a56b89";
+let temperature = 0;
+let dateDescriptionElement = document.querySelector("#date-description");
+let iconElement = document.querySelector("#icon");
+let form = document.querySelector("#search-form");
+
+function dispayFarenheitTemperature(event) {
+  event.preventDefault();
+  celsiusLink.classList.remove("active");
+  farenheitLink.classList.add("active");
+  let farenheitTemperature = (temperature * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(farenheitTemperature);
+}
+
+function displayCelsiusTemperature(event) {
+  event.preventDefault();
+  farenheitLink.classList.remove("active");
+  celsiusLink.classList.add("active");
+  temperatureElement.innerHTML = Math.round(temperature);
+}
+
 function formatDate(date) {
   var hours = date.getHours();
 
