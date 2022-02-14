@@ -1,0 +1,105 @@
+body {
+  font-family: "Aktiv Grotesk", -apple-system, BlinkMacSystemFont, 'San Frasisco', 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+}
+
+.container {
+  max-width: 800px;
+}
+
+.weather-app {
+  margin-top: 20px;
+  margin: 30px auto;
+  border: 1px solid #333344;
+  border-radius: 5px;
+  color: #5A6275;
+  background-color: #C8CCD3;
+  padding: 25px;
+  margin-bottom: 0;
+}
+
+.btn {
+    margin-left: 10px;
+    margin-right: 5px;
+    color: #5A6275;
+    background: #C8CCD3;
+    border-color: #5A6275;
+    border-radius: 10px;
+}
+
+.overview ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.overview #celsius {
+  font-size: 22px;
+  text-decoration: none;
+}
+
+.overview #farenheit {
+  font-size: 22px;
+  text-decoration: none;
+}
+
+.overview h1 {
+  font-weight: 550;
+  opacity: 0.9;
+}
+
+.weather-forcast {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border: 1px solid #333344;
+  border-radius: 5px;
+  background-color: #C8CCD3;
+  text-align: center;
+  color: #5A6275;
+  font-weight: 550;
+  font-size: 20px;
+}
+
+.weather-forcast .weather-forcast-date {
+  opacity: 0.8;
+}
+
+.weather-forcast .weather-forcast-temp-min {
+  opacity: 0.7;
+  font-weight: 550;
+}
+
+
+
+#temperature {
+  font-size: 110px;
+  font-weight: 570;
+}
+
+.overview img {
+  height: 140px;
+  width: 140px;
+  position: relative;
+  top: -25px;
+}
+
+.active {
+  text-decoration: none;
+  color: #5A6275;
+  cursor: default;
+}
+
+.active:hover {
+  text-decoration: none;
+  color: #5A6275;
+}
+
+
+.weather-forcast {
+  margin-top: 20px;
+}
+
+.description {
+  font-size: 20px;
+  font-weight: 400;
+  opacity: 0.8;
+}
