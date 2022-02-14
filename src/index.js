@@ -8,7 +8,7 @@ let windElement = document.querySelector("#wind");
 let dateDescriptionElement = document.querySelector("#date-description");
 let iconElement = document.querySelector("#icon");
 let form = document.querySelector("#search-form");
-var currentLocationButton = document.querySelector("#current-location-button");
+let currentLocationButton = document.querySelector("#current-location-button");
 let temperature = 0;
 
 function dispayFarenheitTemperature(event) {
@@ -27,7 +27,6 @@ function displayCelsiusTemperature(event) {
 }
 
 function formatDate(timestamp) {
-  // calculate the date
   let date = new Date(timestamp);
   let hours = date.getHours();
   if (hours < 10) {
@@ -86,11 +85,6 @@ function currentCity(position) {
   axios.get(apiUrl).then(displayCurrentTemprature);
 }
 
-function getCurrentLocation(event) {
-  event.preventDefault();
-  navigator.geolocation.getCurrentPosition(searchLocation);
-}
-
 function handleSubmit(event) {
   event.preventDefault();
   let cityInput = document.querySelector("#city-input").value;
@@ -120,9 +114,13 @@ function displayForcast(response) {
   });
   forcastElement.innerHTML = forcastHTML;
 }
+function getCurrentLocation(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(searchLocation);
+}
 
 farenheitLink.addEventListener("click", dispayFarenheitTemperature);
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 form.addEventListener("submit", handleSubmit);
 currentLocationButton.addEventListener("click", getCurrentLocation);
-navigator.geolocation.getCurrentPosition(currentCity);
+searchCity("Lagos");
