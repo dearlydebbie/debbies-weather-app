@@ -8,7 +8,7 @@ let windElement = document.querySelector("#wind");
 let dateDescriptionElement = document.querySelector("#date-description");
 let iconElement = document.querySelector("#icon");
 let form = document.querySelector("#search-form");
-
+var currentLocationButton = document.querySelector("#current-location-button");
 let temperature = 0;
 
 function dispayFarenheitTemperature(event) {
@@ -124,8 +124,5 @@ function displayForcast(response) {
 farenheitLink.addEventListener("click", dispayFarenheitTemperature);
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 form.addEventListener("submit", handleSubmit);
-
-var currentLocationButton = document.querySelector("#current-location-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
-searchCity("Lagos");
 navigator.geolocation.getCurrentPosition(currentCity);
