@@ -86,6 +86,11 @@ function currentCity(position) {
   axios.get(apiUrl).then(displayCurrentTemprature);
 }
 
+function getCurrentLocation(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(searchLocation);
+}
+
 function handleSubmit(event) {
   event.preventDefault();
   let cityInput = document.querySelector("#city-input").value;
@@ -120,4 +125,7 @@ farenheitLink.addEventListener("click", dispayFarenheitTemperature);
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 form.addEventListener("submit", handleSubmit);
 
+var currentLocationButton = document.querySelector("#current-location-button");
+currentLocationButton.addEventListener("click", getCurrentLocation);
+searchCity("Lagos");
 navigator.geolocation.getCurrentPosition(currentCity);
