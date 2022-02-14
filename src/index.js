@@ -78,11 +78,24 @@ function displayCurrentTemprature(response) {
   getForcast(response.data.coord);
 }
 
+function searchCity(city) {
+  let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
+  let apiUrl = "https://api.openweathermap.org/data/2.5/weather?q="
+    .concat(city, "&appid=")
+    .concat(apiKey, "&units=metric");
+  axios.get(apiUrl).then(displayCurrentTemprature);
+}
+
 function currentCity(position) {
   let latitude = position.coords.latitude;
   let longitude = position.coords.longitude;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${apiKey}`;
   axios.get(apiUrl).then(displayCurrentTemprature);
+}
+
+function getCurrentLocation(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(currentCity);
 }
 
 function handleSubmit(event) {
@@ -114,13 +127,9 @@ function displayForcast(response) {
   });
   forcastElement.innerHTML = forcastHTML;
 }
-function getCurrentLocation(event) {
-  event.preventDefault();
-  navigator.geolocation.getCurrentPosition(currentCity);
-}
+
 
 farenheitLink.addEventListener("click", dispayFarenheitTemperature);
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 form.addEventListener("submit", handleSubmit);
 currentLocationButton.addEventListener("click", getCurrentLocation);
-searchCity("Lagos");
