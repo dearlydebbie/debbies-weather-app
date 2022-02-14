@@ -8,7 +8,6 @@ let windElement = document.querySelector("#wind");
 let dateDescriptionElement = document.querySelector("#date-description");
 let iconElement = document.querySelector("#icon");
 let form = document.querySelector("#search-form");
-let currentLocationButton = document.querySelector("#current-location-button");
 let temperature = 0;
 
 function dispayFarenheitTemperature(event) {
@@ -94,7 +93,6 @@ function currentCity(position) {
 }
 
 function getCurrentLocation(event) {
-  event.preventDefault();
   navigator.geolocation.getCurrentPosition(currentCity);
 }
 
@@ -127,6 +125,11 @@ function displayForcast(response) {
   });
   forcastElement.innerHTML = forcastHTML;
 }
+getCurrentLocation();
+
+let currentLocationButton = document.querySelector("#current-location-button");
+currentLocationButton.addEventListener("click", getCurrentLocation);
+
 
 
 farenheitLink.addEventListener("click", dispayFarenheitTemperature);
